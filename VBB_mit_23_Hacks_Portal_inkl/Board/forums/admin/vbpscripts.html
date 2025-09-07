@@ -1,0 +1,309 @@
+<html>
+
+<head>
+<title>vBPortal File Edits</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<style type="text/css">
+<!--
+.codebit     { font-family: 'Courier New', Courier, mono }
+body         { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt }
+td           { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt }
+textarea     { background-color: #EEEEEE }
+-->
+</style>
+</head>
+
+<body bgcolor="#CCCCCC" text="#000000">
+<font size="5"><b>vbPortal 3.0 pr 8.1 </b></font>Modifikation ©2001, <a href="http://www.phpportals.com">phpPortals</a><br>
+CMS add-on for vBulletin 2.2 Copyright ©2000, 2001, Jelsoft Enterprises
+Limited.<br>
+<br>
+<table border="1" width="100%" height="4218">
+  <tr>
+    <td height="135" width="110" valign="top"><i><b>Modifikationen <br>
+      in den VBulletin Scripts:</b></i></td>
+    <td height="135" width="1441"><b><font size="3">Beispiel:</font></b> 
+      <p><b><font size="3">Script Name:</font></b></p>
+      <ul>
+        <li><i><font color="blue">original code</font>
+        </i>
+        <li><i><font color="#FF0000"><b>&lt;!-- Was zu tun ist--&gt;</b></font><font color="blue"><br>
+          <br>
+          </font>
+          <textarea rows="1" cols="90">Einzufügender CODE</textarea>
+      </i></ul>
+      <p>Hinweis:<br>
+        Die <font color="#006600"><b>FETT GR&Uuml;NEN</b><font color="#000000"> 
+        Texte sind in der Deutschen Version nicht wie hier auf Englisch! *lol*<br>
+        Tipp: Wenn Du eine Deutsche Version besitzt,<br>
+        lasse die Gr&uuml;n-Markierten Felder einfach aus, und suche nur das was 
+        vor der Gr&uuml;nen Schrift<br>
+        kommt.<br>
+        Beispiel:</font></font><br>
+        <font color="blue">&lt;td align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;../index.php?s=&lt;?php 
+        echo $session[sessionhash]; ?&gt;&quot; target=&quot;_blank&quot;&gt;<b><font color="#006600">Go 
+        to your Forums Home Page</font></b>&lt;/b&gt;&lt;/b&gt;&lt;/TD&gt;</font><br>
+        Dann Suchst Du nach:<br>
+        <font color="blue">&lt;td align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;../index.php?s=&lt;?php 
+        echo $session[sessionhash]; ?&gt;<br>
+        <font color="#000000">Dann markierst Du die Zeile, und ersetzt diese. 
+        ;-)<br>
+        Nur Gr&uuml;n Markierte W&ouml;rter sind auf Englisch/Deutsch! Alles andere 
+        (blau) ist immer zu finden! *ggg*</font></font></p>
+      </td>
+  </tr>
+  <tr>
+    <td valign="top" height="320" width="110"><b>&Auml;nderungen in<br>
+      admin/index.php</b></td>
+    <td height="320" width="1441" valign="top"> 
+      <p><b><font size="3">admin/index.php:</font><br>
+        Schritt 1 von 1 finde:</b><br>
+        <br>
+        <font color="blue">&lt;td align=&quot;right&quot;&gt;&lt;b&gt;&lt;a href=&quot;../index.php?s=&lt;?php 
+        echo $session[sessionhash]; ?&gt;&quot; target=&quot;_blank&quot;&gt;<font color="#006600"><b>Go 
+        to your Forums Home Page</b></font>&lt;/b&gt;&lt;/b&gt;&lt;/TD&gt;</font> 
+        <br>
+      </p>
+      <p><br>
+        <b><font color="#FF0000">* ersetzen mit:</font></b><br>
+      <br>
+      <textarea cols="90" rows="7">
+<!-- Optional vbPortal text -->
+	 <td align="right"><b><a href="../index.php?s=<?php echo $session[sessionhash]; ?>" target="_blank">Go to your Forums Home Page </a>	<a href="../../admin.php?s=<?php echo $session[sessionhash]; ?>"target="_blank">| vbPortal Admin</a></b></textarea></TD>
+<!-- End Optional vbPortal text -->
+		<br>
+      <p></p>
+    <td width="50"></td>
+  </tr>
+  <tr>
+    <td valign="top" height="479" width="110"> 
+      <p><b>Optimale &auml;nderungen in poll.php</b></p>
+      </td>
+    <td height="479" width="1441"><b><font size="3">poll.php:</font><br>
+      Schritt 1 von 1 finde:</b><br>
+      <br>
+      <font color="blue">// redirect<br>
+      eval(&quot;standardredirect(\&quot;&quot;.gettemplate(&quot;redirect_pollvotethanks&quot;).&quot;\&quot;,\&quot;showthread.php?s=$session[sessionhash]&amp;threadid=$threadinfo[threadid]\&quot;);&quot;);<br>
+      } else {<br>
+      eval(&quot;standarderror(\&quot;&quot;.gettemplate(&quot;error_nopolloptionselected&quot;).&quot;\&quot;);&quot;);<br>
+      }<br>
+      }</font><br>
+      <br>
+      <b><font color="#FF0000">* ersetzen mit:</font></b><br>
+      <br>
+      <textarea cols="80" rows="15">
+// vBPortal Begin
+// // redirect
+//    eval("standardredirect(\"".gettemplate("redirect_pollvotethanks")."\",\"showthread.php?s=$session[sessionhash]&threadid=$threadinfo[threadid]\");");
+//  } else {
+//    eval("standarderror(\"".gettemplate("error_nopolloptionselected")."\");");
+//  }
+//}
+   // redirect back to homepage for polls forum votes
+       if($threadinfo[forumid]==$pollsforum){
+  	   // redirect
+  	   eval("standardredirect(\"".gettemplate("redirect_pollvotethanks")."\",\"$nukeurl/index.php?s=$session[sessionhash]\");");
+
+ 	}else{
+	    // redirect
+	    eval("standardredirect(\"".gettemplate("redirect_pollvotethanks")."\",\"showthread.php?s=$session[sessionhash]&threadid=$threadinfo[threadid]\");");
+       }
+
+  } else {
+    eval("standarderror(\"".gettemplate("error_nopolloptionselected")."\");");
+  }
+}
+// vBPortal End
+</textarea></td>
+  </tr>
+  <tr>
+    <td valign="top" height="318" width="110"><b>Optimale &auml;nderungen in<br>
+      newreply.php:</b></td>
+    <td height="318" width="1441"><b><font size="3">newreply.php:</font><br>
+      Schritt 1 von 1 finde:</b><br>
+      <br>
+      <font color="blue">// auto bypass queueing for admins/mods<br>
+      if (ismoderator($foruminfo[forumid])) {<br>
+      $visible=1;<br>
+      }</font><br>
+      <br>
+      <b><font color="#FF0000">Unter diesen text f&uuml;ge ein:</font></b><br>
+      <br>
+      <textarea cols="80" rows="8">
+// vBPortal Begin
+  // auto bypass queueing for news forum and polls forum replys
+  if($foruminfo[forumid]==$newsforum or $foruminfo[forumid]==$pollsforum ){
+    $visible=1;
+  }
+// vBPortal End
+</textarea>
+  <tr>
+    <td valign="top" height="77" width="110" bgcolor="#000000"></td>
+    <td height="77" width="1441" valign="top" bgcolor="#000000"> 
+      <p><b><font color="#FF0000" size="2"><br>
+        <font color="#FFFF00">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>
+        !!!Die folgenden modifikationen sind nur f&uuml;r die Themen(Topics) Funktion<br>
+        !!!Wenn Du diese nicht im Installationsscript (vbpinstall.php) installiert<br>
+        !!!hast, willst... Dann la&szlig; das alles hier einfach weg! *ggg*!!!!<br>
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</font> 
+        </font></b></p>
+      <tr>
+    <td valign="top" height="443" width="110"><b>search.php</b></td>
+    <td height="443" width="1441" valign="top"><b><font size="3">search.php</font><br>
+      Schritt 1 von 1 finde:</b>
+<p><font color="blue">// ###################### Start posts by user x
+      #######################</font></p>
+      <p><b><font color="#FF0000">* &Uuml;ber dieses f&uuml;gst Du folgendes ein:</font></b></p>
+      <p><textarea cols="80" rows="16">
+// vBPortal Begin Topic search routine
+// ###################### Start posts by topic x #######################
+if ($action=="findtopic") {
+  // get allowable forums:
+  $forumsql=getallforumsql();
+
+  // get topic:
+  $topicsql=" AND post.topic='$topic'";
+
+  $wheresql="1=1".$forumsql.$topicsql;
+
+  if ($getsearch=$DB_site->query_first("SELECT searchid FROM search WHERE query='".addslashes($wheresql)."'")) {
+    $searchid=$getsearch[searchid];
+
+  } else {
+    // get last search for this topic and check floodcheck
+    if ($prevsearch=$DB_site->query_first("SELECT searchid,dateline FROM search WHERE ".iif($bbuserinfo[userid]==0,"ipaddress='$ipaddress'","topic=$topic")." ORDER BY dateline DESC LIMIT 1")) {
+      if (time()-$prevsearch[dateline]<$searchfloodcheck and $searchfloodcheck!=0) { // and !ismoderator()) {
+                                eval("standarderror(\"".gettemplate("error_searchfloodcheck")."\");");
+                                exit;
+      }
+    }
+                // insert query into db
+                $DB_site->query("INSERT INTO search (searchid,query,dateline,querystring,showposts,userid,ipaddress) VALUES (NULL,'".addslashes($wheresql)."',".time().",'".addslashes($query)."',1,$bbuserinfo[userid],'".addslashes($ipaddress)."')");
+                $searchid=$DB_site->insert_id();
+  }
+
+eval("standardredirect(\"".gettemplate("redirect_search")."\",\"search.php?s=$session[sessionhash]&action=showresults&searchid=$searchid\");");
+}
+// vBPortal End
+</textarea>
+  <tr>
+    <td valign="top" height="1252" width="110"><b>newthread.php:</b> 
+      <p>&nbsp;</p>
+    </td>
+    <td height="1252" width="1441" valign="top"><b><font size="3">newthread.php:</font><br>
+      Schritt 1 von 3 finde:</b><br>
+      <br>
+      <br>
+      <font color="blue">$DB_site-&gt;query(&quot;UPDATE post SET pagetext='&quot;.addslashes($message).&quot;',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid',attachmentid='$attachmentid'
+      WHERE postid='$posts[minpost]'&quot;);</font><br>
+      <br>
+      <b><font color="#FF0000">ersetze es durch:</font></b><br>
+      <br>
+      <textarea cols="80" rows="12">
+// vBPortal Begin
+//$DB_site->query("UPDATE post SET pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid',attachmentid='$attachmentid' WHERE postid='$posts[minpost]'");
+$DB_site->query("UPDATE post SET pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid',attachmentid='$attachmentid',topic='$topic' WHERE postid='$posts[minpost]'");
+// vBPortal End
+</textarea><br>
+      <br>
+      <b><font size="3">newthread.php:</font><br>
+      Schritt 2 von 3 finde:</b><br>
+      <br>
+      <font color="blue">// create first post<br>
+      $DB_site-&gt;query(&quot;INSERT INTO post (postid,threadid,title,username,userid,dateline,attachmentid,pagetext,allowsmilie,showsignature,ipaddress,iconid,visible)
+      VALUES (NULL,'$threadid','&quot;.addslashes(htmlspecialchars($subject)).&quot;','&quot;.addslashes($postusername).&quot;','$bbuserinfo[userid]','&quot;.time().&quot;','$attachmentid','&quot;.addslashes($message).&quot;','$allowsmilie','$signature','$ipaddress','$iconid','1')&quot;);</font><br>
+      <br>
+      <b><font color="#FF0000">ersetzen durch:</font></b><br>
+      <br>
+      <textarea cols="80" rows="12">
+// vBPortal Begin
+// create first post
+//      $DB_site->query("INSERT INTO post (postid,threadid,title,username,userid,dateline,attachmentid,pagetext,allowsmilie,showsignature,ipaddress,iconid,visible) VALUES (NULL,'$threadid','".addslashes(htmlspecialchars($subject))."','".addslashes($postusername)."','$bbuserinfo[userid]','".time()."','$attachmentid','".addslashes($message)."','$allowsmilie','$signature','$ipaddress','$iconid','1')");
+	  $DB_site->query("INSERT INTO post (postid,threadid,title,username,userid,dateline,attachmentid,pagetext,allowsmilie,showsignature,ipaddress,iconid,visible,topic) VALUES (NULL,'$threadid','".addslashes(htmlspecialchars($subject))."','".addslashes($postusername)."','$bbuserinfo[userid]','".time()."','$attachmentid','".addslashes($message)."','$allowsmilie','$signature','$ipaddress','$iconid','1','$topic')");
+// vBPortal End
+</textarea><br>
+      <br>
+      <b><font size="3">newthread.php:</font><br>
+      Schritt 3 von 3 finde:</b><br>
+      <p><font color="blue">eval(&quot;dooutput(\&quot;&quot;.gettemplate(&quot;newthread&quot;).&quot;\&quot;);&quot;);<br>
+      <br>
+      }<br>
+      <br>
+      ?&gt;</font><br>
+      <br>
+        <b><font color="#FF0000">genau &uuml;ber diesen Code f&uuml;gst Du das 
+        ein :</font></b><br>
+      <br>
+      <textarea cols="80" rows="15">
+// vBPortal Begin
+   if($forumid==$newsforum){
+      $toplist = mysql_query("select topicid, topictext from nuke_topics order by topictext");
+       while(list($topicid, $topics) = mysql_fetch_row($toplist)) {
+        if ($topicid==$topic) { $sel = "selected=\"selected\" "; }
+           eval ("\$P_newsselecttopic_list .= \"".gettemplate("P_newsselecttopic_list")."\";");
+	  $sel = "";
+     }
+     eval("\$newthreadheader .= \"".gettemplate('P_newthreadheader')."\";");
+     eval ("\$P_newsselecttopic = \"".gettemplate("P_newsselecttopic")."\";");
+  } else {
+     $newthreadheader = "Post New Thread";
+  }
+// vBPortal End
+</textarea></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" height="840" width="110"><b>editpost.php:</b></td>
+    <td height="840" width="1441" valign="top"><b><font size="3">editpost.php:</font><br>
+      Schritt 1 von 2finde:</b><br>
+      <br>
+      <font color="blue">if ($foruminfo[allowsmilies]) {<br>
+      if ($bbuserinfo[showvbcode])<br>
+      $vbcode_smilies = getclickysmilies();<br>
+      eval(&quot;\$disablesmiliesoption = \&quot;&quot;.gettemplate(&quot;newpost_disablesmiliesoption&quot;).&quot;\&quot;;&quot;);<br>
+      } else {<br>
+      $disablesmiliesoption=&quot;&quot;;<br>
+      }</font><br>
+      <br>
+      <font color="#FF0000"><br>
+      <b>Nach der Rout, setzt Du das ein:</b></font><br>
+      <br>
+      <textarea cols="80" rows="13">
+// vBPortal Begin
+	if($threadinfo[forumid]==$newsforum and $isfirst ){
+      	 $toplist = mysql_query("select topicid, topictext from nuke_topics order by topictext");
+       while(list($topicid, $topics) = mysql_fetch_row($toplist)) {
+       if ($topicid==$postinfo[topic]) { $sel = "selected=\"selected\" "; }
+          eval ("\$P_newsselecttopic_list .= \"".gettemplate("P_newsselecttopic_list")."\";");
+	  $sel = "";
+        }
+           eval ("\$P_newsselecttopic = \"".gettemplate("P_newsselecttopic")."\";");
+     }
+// vBPortal
+</textarea><br>
+      <br>
+      <b><font size="3">editpost.php:</font><br>
+      Schritt 2 von 2 finde:</b><br>
+      <br>
+      <font color="blue">$DB_site-&gt;query(&quot;UPDATE post SET title='&quot;.addslashes(htmlspecialchars($title)).&quot;',pagetext='&quot;.addslashes($message).&quot;',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid'$editedbysql$attachmentsql
+      WHERE postid='$postid'&quot;);</font><br>
+      <br>
+      <b><font color="#FF0000">ersetzen mit:</font></b><br>
+      <br>
+      <textarea cols="80" rows="12">
+// vBPortal Begin
+//$DB_site->query("UPDATE post SET title='".addslashes(htmlspecialchars($title))."',pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid'$editedbysql$attachmentsql WHERE postid='$postid'");
+$DB_site->query("UPDATE post SET title='".addslashes(htmlspecialchars($title))."',pagetext='".addslashes($message)."',allowsmilie='$allowsmilie',showsignature='$signature',iconid='$iconid'$editedbysql$attachmentsql,topic='$topic' WHERE postid='$postid'");
+// vBPortal End
+</textarea></td>
+  </tr>
+  <tr>
+    <td valign="top" height="116" width="110"></td>
+    <td height="116" width="1441" valign="top">&nbsp; 
+      <p>&nbsp;</p>
+      <p><b><font size="3">Fertisch Grüsse an alle VBler Captain Kirk</font></b>
+    </table>
+
+</body>

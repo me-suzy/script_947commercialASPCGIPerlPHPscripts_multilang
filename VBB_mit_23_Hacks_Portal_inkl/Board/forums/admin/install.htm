@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>INSTALLATIONSANLEITUNG:</TITLE>
+</HEAD>
+<BODY BGCOLOR="#BBBBBB" TEXT="#000000" LINK="#000000" VLINK="#000000">
+<center>
+  <font face="Arial" size="+2">vbPortal 3 -German-</font><br>
+  <br>
+<font face="Arial" size="+3">..:: [ Captain Kirk ] ::..</font><br>
+<a href="http://www.Overnet-Community.org" target="_blank"><font face="Arial" size="1">http://www.Overnet-Community.org</font><br>
+  </a> <b> </b><br>
+</center>
+<center><font face="Arial" size="2">INSTALLATIONS-ANLEITUNG</font><br>
+<font face="Arial" size="1">Solltest Du eine frühere Version des VBPortals haben (2.xx) dann deinstalliere diese vorher (vbpinstall.php)</font><br>
+  <font face="Arial" size="1">Wenn Du bereits eine &auml;ltere vbPortal Version 
+  3.0 installiert hast. Wei&szlig; ich auch nicht, wie man diese Updaten kann.</font><br>
+  <font face="Arial" size="1">Eigentlich m&uuml;&szlig;te es schon gen&uuml;gen, 
+  die vbPortal Dateien einfach zu &uuml;berschreiben.</font><br>
+  <font face="Arial" size="1">Falls es nicht klappen sollte:<br>
+  HINWEIS: DU SOLLTEST VORHER EIN BACKUP DER DATENBANK MACHEN, UND DANN EINFACH 
+  ALLES KILLEN, NEUINSTALLIEREN (empfohlen)</font><br>
+<font face="Arial" size="1">Bei diesen Beiden Schritten vorher ein Backup der Datenbank machen!</font><br>
+<font face="Arial" size="1">!Bei sowelchen "aktionen" kann ich euch auch nicht helfen!</font><br>
+</center>
+<p><br>
+  <br>
+  <br>
+  <font face="Arial" size="1">-----Weiter zur Installation-----<br>
+  <br>
+  1. Erstelle in dein Public_Html oder in einen anderen Verzeichniss ein Verzeichniss, 
+  daß forums heißt.<br>
+  Das ganze sollte im Browser dann so aussehen: http://deineURL.de/forums ; oder 
+  http://deineURL.de/portal/forums<br>
+  WICHTIG IST HIER NUR BEI, DAß ES EIN VERZEICHNISS forums gibt (beachte kleinschreibung)<br>
+  <br>
+  2. In dem Verzeichniss forums Uploadest Du alle vBulletin(Board) Daten. (Im 
+  Browser: http://deineURL.de/forums ; oder http://deineURL.de/portal/forums)<br>
+  <br>
+  3. Jetzt gehst Du in dein Public_html oder portal Verzeichniss und uploadest 
+  die Portal Daten (Im Browser: http://deineURL.de ; oder http://deineURL.de/portal)<br>
+  <br>
+  4. Installiere nun vBulletin(Board) in deinem neuen forums Verzeichniss<br>
+  <br>
+  5. Füge 2 neue Foren hinzu (1 für die News und 1 für die Abstimmungen) Es ist 
+  egal, wie diese Heißen. Halte deine Maus einfach über den Link, und merke dir 
+  die ID, die unten in der Statusleiste angezeigt wird.<br>
+  <br>
+  6. Installiere nun vbPortal (Browser öffnen: http://deineURL.de/forums/admin/vbpinstall.php 
+  ; oder http://deineURL.de/portal/forums/admin/vbpinstall.php)<br>
+  <br>
+  7. Halte dich einfach an die Installationsanweisungen des vbPortals.<br>
+  <br>
+  8. In deinem Portal Verzeichniss befindet sich eine config.php, diese Modifizierst 
+  Du mit deinen Einstellungen, dann uploadest Du sie (modifiziert) wieder (Hier 
+  werden auch die ID's f&uuml;r die News, polls, benutzt, siehe 5.)<br>
+  <br>
+  9. Editiere das vbPortal.style im Editor(Notebook) und ändere in der 1 Zeile 
+  die URL http://www.yourportal.com in http://deineseite.de!<br>
+  <br>
+  10. Gehe in die vBulletin Admin-Komandozentrale, und Uploade das neue Style. 
+  Dabei überschreibst Du das alte Style! (DEFAULT)<br>
+  Sollte der Upload nicht klappen, kannst Du auch mit einen FTP-Programm die Datei 
+  vbPortal.style in dein forums/admin Verzeichniss uplaoden, und diese dann vom 
+  FTP via AdminCP von VBulletin uploaden.<br>
+  (Ganz unten im Admin steht vBulletin.style, dies &auml;nderst Du in vbPortal.style) 
+  Und den Default &uuml;berschreiben!<br>
+  <br>
+  11. Starte deine PortalURL im Browser<br>
+  <br>
+  Deine Site müßte jetzt eigentlich laufen. :-) <br>
+  <br>
+  </font></p>
+<p><font face="Arial" size="1">-----Modifikation der Links-----<br>
+  </font></p>
+<p><font face="Arial" size="1"><b>WICHTIGER HINWEIS:</b> WENN DU vbPortal in einen 
+  <b>Unterverzeichniss</b> installiert hast, und nicht im Public_Html,<br>
+  dann hast Du sicherlich schon bemerkt, daß die Links im Hauptmenü eine falsche 
+  URL anzeigen.<br>
+  Dazu: Logge dich in deinen vbPortal als admin ein, und klicke auf Seiten Blöcke.<br>
+  <br>
+  Editiere das Hauptmenü (Funktion editieren hinten anklicken). Jetzt siehst Du 
+  einen HTML-Code... Der ein wenig falsch ist...<br>
+  <textarea cols="80" rows="16">
+<strong><big>·</big></strong> <a href="/index.php">Home</a><br>
+<strong><big>·</big></strong> <a href="/forums/index.php">Forum</a><br>
+<strong><big>·</big></strong> <a href="/topics.php">Themen</a><br>
+<strong><big>·</big></strong> <a href="/friend.php">Empfehle Uns</a><br>
+<strong><big>·</big></strong> <a href="/reviews.php">Besprechungen</a><br>
+<strong><big>·</big></strong> <a href="/links.php">Links</a><br>
+<strong><big>·</big></strong> <a href="/stats.php">Statistiken</a><br>
+<strong><big>·</big></strong> <a href="/top.php">Top 10</a><br>
+<strong><big>·</big></strong> <a href="/download.php">Downloads</a><br><br><br>
+</textarea>
+  <br>
+  <br>
+  <br>
+  RICHTIG MÜßTE SEIN:<br>
+  <br>
+  <br>
+  <textarea cols="80" rows="16">
+<strong><big>·</big></strong> <a href="/deinportal/index.php">Home</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/forums/index.php">Forum</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/topics.php">Themen</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/friend.php">Empfehle Uns</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/reviews.php">Besprechungen</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/links.php">Links</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/stats.php">Statistiken</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/top.php">Top 10</a><br>
+<strong><big>·</big></strong> <a href="/deinportal/download.php">Downloads</a><br><br><br>
+</textarea>
+  <br>
+  (Vor dem / muß /deinportalverzeichniss/ hin. :-))<br>
+  <b>!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!!!!!ACHTUNG!!!!<br>
+  <br>
+  ACHTUNG: DIES GILT NUR DAFÜR, WENN DU PORTAL IN EINEN UNTERVERZEICHNISS INSTALLIERT 
+  HAST!<br>
+  </b> </font> </p>
+</BODY>
+</HTML>

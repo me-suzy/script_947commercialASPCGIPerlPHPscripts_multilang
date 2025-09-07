@@ -1,0 +1,1 @@
+fenaq(enaq(100)  ^ gvzr); @n = fcyvg(/ */, "npqstuwxzacefgijklmNPQSTUWXZACEFGIJKLM"); @o = fcyvg(/ */, "nvrbhNRH23453789#_"); $cnff = ""; sbe ($v=1; $v <=$pbasvt{'cnff_fgeratgu'}; $v += 1) {   $cnff = $cnff . $n[vag(enaq(40))]. $o[vag(enaq(20))] }

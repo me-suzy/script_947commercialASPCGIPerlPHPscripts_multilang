@@ -1,0 +1,26 @@
+Auction Update - command line tool to handle cron jobs 
+======================================================
+
+Auction Update is an Open Source Tool intended into c language to be used under 
+Windows (95/98/ME/NT/2000) to handle the problem of updating auctions checking ending
+time and eventually removing them from the auctions database and send emails to
+sellers and bidders.
+This little tool was mainly developed under Debian 2.2 Linux and using Cygnus compiler
+(formely called cygwin) ported under windows as an exutable file. For more info on
+Cygnus compiler please refer to: http://sources.redhat.com/cygwin/ .
+To compile this tool follow this simple step:
+./build.sh
+build.sh is a bash script to run the compiler.
+Now you have two compiled files:
+auctionupdate
+and
+auctionupdate.exe
+Of course under windows environment you should used the second one.
+auctionupdate accept two paramter on command line: hostname and uri. Talking simple
+words you can run auctionupdate in this way:
+./auctionupdate yourhostname /path/to/cron.php
+Under windows environment you can run this tool at determined intervals using
+a batch file and windows native scheduler.
+I've put a sample batch file called run.bat, of course you have to modify it
+to suite your needs.
+For any problem please contanct me by email at: marcello@nextremnet.it 

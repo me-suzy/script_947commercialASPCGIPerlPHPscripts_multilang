@@ -1,0 +1,43 @@
+line0=Allgemeine-Konfiguration,11
+usershell=Shell der anzulegenden User,1,/bin/sh-/bin/sh,/bin/bash-/bin/bash,/bin/false-/bin/false
+#group=Linuxgruppe der User:,1,users-users,mail-mail
+#unixsave=Nur Suse 8.x User und RH 9.0 (benutze _ statt . im Namen) ?,1,1-Ja,0-Nein
+pass_strength=Passwordst&auml;rke (6 / 8 oder 10 Zeichen) ?,1,3-6,4-8,5-10
+
+line1=Webserver-Konfiguration,11
+httpd_2=Pfad zum httpd.conf Verzeichnis - ben&ouml;tigt End slash (/):
+webpfad=Pfad zu den Webverzeichnissen - ben&ouml;tigt End slash (/):
+#subfolder=Sollen die 3 Unterordner html - cgi-bin - logs angelegt werden ?,1,1-Ja,0-Nein
+#sub=Soll www im homedirectory angelegt werden ?,1,1-Ja,0-Nein
+
+line2=Mail-Konfiguration,11
+mail_dir=Pfad zum DIR der Mailuser - ben&ouml;tigt End slash (/):,3
+sendpost=Ihr Mailserversystem:,1,1-Sendmail,0-Postfix
+virtuser=Pfad zur Virtusertable(Sendmail) oder Postfix virtual file:
+mailvariable=Mailkonten Voreinstellung auf dem Indexscreen:
+mxer=Sollen Mailuser ueber Ihren Mxer Mails senden koennen ?,1,1-Ja,0-Nein
+
+line3=Namerserver-Konfiguration,11
+bindbin=Pfad zum Nameserver reload:
+master=Pfad zu den Master Dateien von Bind - ben&ouml;tigt End slash (/):
+host1=Erster Nameserver: (FQDN)
+host2=Zweiter Nameserver: (FQDN)
+mailserver=Ihr Mailserver:
+
+#ip=IP Adresse dieses Servers:
+sendresult=Soll eine Best&auml;tigungsmail versendet werden ?,1,1-Ja,0-Nein
+adminmail=Ihre E-Mail Adresse
+
+line4=MySQL-Support-Konfigurieren,11
+mysql_user=Ihr MySQL Username:
+mysql_pass=Ihr MySQL Password:
+mysql_host=Ihr MySQL Host:
+
+line5=Sonstige-Konfigurationen,11
+webalizer_path=Pfad und Programm zum Webalizer Programm:
+openssl=Pfad und Programm zu Openssl:
+device=Device auf dem die Quotas laufen:
+checked=Standardm&auml;ssig sind alle Optionen markiert,1,1-Ja,0-Nein
+quota_default=Quota Voreinstellung auf dem Indexscreen:
+whois=Mit whois Kontrollfunktion,1,1-Ja,0-Nein
+disk_usage=Zeige den Festplattenverbrauch,1,1-Ja,0-Nein

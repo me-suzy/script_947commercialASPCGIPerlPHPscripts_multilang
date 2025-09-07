@@ -1,0 +1,43 @@
+PhpAuction 2.0 - web based auction system
+
+=====================================
+
+Copyright (c), 1999, 2000, 2001, 2002 - phpauction.org
+
+
+
+Cron.php execution
+
+======================
+
+phpauction needs cron.php to run regularly to check expired auctions and
+
+close them updating the database and sending e-mails to sellers and winners.
+
+
+
+Under *nix this is simple since you can run the script using a cron job, for example once a day.
+
+If you don't know what a cron job is go here for more information:
+
+http://uwsg.iu.edu/usail/automation/cron.html
+
+
+
+Under Windows things are not so simple. Marcello Scacchetti wrote a C utility you
+
+can use to run cron periodically. It is in the "cron" directory in the distribution.
+
+There's a README file which explains how to use it.
+
+
+
+Please Note that if you plan on calling cron.php directly, it must be parsed by
+
+a php capable web server, most likely via a web browser. Simply trying to
+
+execute cron.php from a command line is generally only going to result in
+
+failure.
+
+See the Documentation Manual & FAQs at PHPAUCTION.org for more information.

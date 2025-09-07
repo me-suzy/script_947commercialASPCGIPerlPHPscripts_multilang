@@ -1,0 +1,51 @@
+PhpAuction 2.1 - web based auction system
+
+=====================================
+
+Copyright (c), 1999, 2000, 2001, 2002 - phpauction.org
+
+
+
+Welcome to PhpAuction!
+
+
+This is  V. 2.1.
+
+
+PhpAuction is an Free Software project intended to develop a powerful and flexible 
+
+web-based auction system. It is written using PHP scripting language on a MySQL 
+
+database engine.
+
+
+
+Released under the GNU GENERAL PUBLIC LICENSE, PhpAuction is the creation of many 
+
+volunteer programmers from around the world. 
+
+Please visit www.phpauction.org for more information.
+
+
+For installation instructions please read the INSTALLATION.txt file.
+
+Be sure to check out the FEATURES file for the list of unique features PhpAuction has 
+
+to offer.
+
+For licensing information please see the LICENSE file. You can also find out who helped 
+
+develop PhpAuction in the CREDITS file.
+
+
+
+Please remember that PhpAuction is released under the GNU GENERAL PUBLIC LICENSE and
+
+comes without any warranty. If you need technical support, please visit the discussion 
+
+forums, FAQs, & the online documentation Manual located at www.phpauction.org. There you will find online support and answers to 
+
+a few common problems.
+
+
+

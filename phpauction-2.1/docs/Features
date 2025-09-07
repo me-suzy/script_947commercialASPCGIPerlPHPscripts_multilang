@@ -1,0 +1,85 @@
+PhpAuction - web based auction system
+
+=====================================
+
+Copyright (c), 1999, 2000, 2001, 2002 - phpauction.org
+
+PhpAuction Features release 2.1
+
+===============================
+
+Added Installation Script
+Added edit live auctions feature
+Fixed additional bugs
+
+PhpAuction Features release 2.0
+
+===============================
+
+Upgraded to PHP 4
+Extended Admin Back-end Options
+Added ability to re-submit & edit Auctions
+Added feedback Counter 
+Intregrated phpAdsNew Banner Management Program
+Fixed Bugs in Dutch Auctions
+Fixed Bugs in Input Money Format
+Fixed additional bugs
+
+
+PhpAuction Features release 1.3
+
+===============================
+
+- My Auctions: Allows users to view
+			   Active Auctions
+			   Closed Auctions
+			   Active User Bids
+- Newsletter:  Ability to send newsletter to users who choose to have it sent to them.	
+
+
+PhpAuction Features release 1.1
+
+===============================
+
+- customizable HTML templates for easy design changes
+- mySQL database backend for superior control over data
+- HTML product listings with uploadable photos 
+- Complete search function which searches entire database for products
+- The display of current users and current auctions
+- New user registration
+- User Accounts: Log in and edit current auctions
+-                User defined usernames
+-                Password retrevial via email
+- Free bids for registered users
+- Email notification of bids
+- Auctions: User defined Item descriptions
+-           Users can upload pictures
+-           Reserve prices, minimum bids
+-           Standard, dutch auctions
+-           View bid history
+- Auction Displays:  Displayed seller name and information
+-                    Displayed quanity of items
+-                    Ability to send auction to a friend
+- Browseable categories
+- Displays the last created auctions 
+- Displays the Highest bids
+- Displays Auctions ending soon
+- Help system
+- Basic news system
+
+PhpAuction Administration Program 
+
+=================================
+
+- Password protected admin program
+- Changable currency labels for use in different countries
+- Configuration of admin e-mail address  
+- Configuration of categories  
+- Configuration of countries table  
+- Configuration of payment methods  
+- Configuration of auctions duration  
+- Configuration of bid increments  
+- Edit/Delete Users
+- Edit/Delete Auctions
+- Add/edit/delete Help System topics
+- Add/edit/delete News 

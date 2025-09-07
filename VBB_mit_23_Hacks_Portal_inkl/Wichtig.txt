@@ -1,0 +1,70 @@
+VBB mit 23 Hacks und Portal
+
+So hier die Anleitung die Dateien aus dem Ordner Board auf euren server hochladen
+Dan ins admin verzeichniss die datei config.php bearbeiten sind so aus füttert die datei mit euren daten also 
+database name , username , passwort und eure email wen das geschehen ist ladet ihr die datei wieder ins admin verzeichniss 
+danach nur noch mit PHP Admin die daten bank hochladen wenn diese zu gross ist mit SQLDumpsplitter bearbeiten also 
+kleiner machen .
+
+Hier ist noch der user name und das passwort als admin
+
+USER :  admin
+
+Passwort : admin
+
+
+Zu bearbeitene Dateien 
+
+Config.php zu finden im Ordner   forums\admin
+###############################################################
+Suche diese stelle  
+// type of database running
+// (only mysql is supported at the moment)
+$dbservertype='mysql';
+
+// hostname or ip of server
+$servername='localhost';
+
+// username and password to log onto db server
+$dbusername='datenbankname';   //hier dein username für die mysql datenbank
+$dbpassword='datenpasswort';   //hier dein passwort für die mysql datenbank
+
+// name of database
+$dbname='test';               //hier der name deiner datenbank rein
+
+// technical email address - any error messages will be emailed here
+$technicalemail='deine@email.de';     // hier deine mailadresse
+######################################################################
+Und noch mal ne config.php zu finden im Hauptverzeichnis
+
+Suche diese Stelle
+
+######################################################################
+# General Site Configuration
+#
+# $sitename:      Your Site Name
+# $nukeurl:       Complete URL for your site (Do not put / at end)
+# $bburl:         Complete URL to vbulletin (Do not put / at end)
+# $nukepath:      System path to your site (Do not put / at end)
+# $vbpath:        System path to your vBulletin sub-directory (Do not put / at end)
+# $site_logo:     Logo for Printer Friendly Page (It's good to have a Black/White graphic)
+# $slogan:        Your site's slogan
+# $startdate:     Start Date to display in Statistic Page
+######################################################################
+
+$sitename = "vbPortal";
+$nukeurl = "http://localhost";
+$bburl = "http://localhost/forums";              //hier alles anpassen also url und absolute Pfad
+$nukepath ="/wampp13cs/htdocs/";
+$vbpath ="/wampp13cs/htdocs/forums";
+$slogan = "vbPortal a CMS addon for vBulletin";
+$startdate = "07 Mai 2003";
+
+
+
+Dann noch im controll panel unter Styles Modify  [fonts/color/etc]
+
+Diese stelle suchen  Image folder path  dort eure url eingeben
+Und den noch unter  [edit replacements]  dort 2 mal eure url eingeben 
+
+So das müsste es gewesen sein nun sollte es laufen
